@@ -88,7 +88,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
       <main className="flex-1 min-w-0 md:pl-0 pt-12 md:pt-0">
         <div className="max-w-4xl mx-auto px-6 py-12 md:px-12 md:py-8 text-lg leading-relaxed">
           {children}
-          <DocsFooter />
+         
         </div>
       </main>
     </div>
