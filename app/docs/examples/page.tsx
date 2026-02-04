@@ -3,26 +3,26 @@ import { DocBlock, Code, Line } from "@/components/docs/Blocks";
 export default function Page() {
   return (
     <div className="max-w-3xl">
-      <h1 className="text-3xl font-bold text-[#D3DAD9]">Examples</h1>
+      <h1 className="text-4xl font-bold text-white tracking-tight mb-6">Examples</h1>
 
-      <p className="mt-4 text-[#D3DAD9]/80">
+      <p className="text-lg text-white/70 leading-relaxed mb-8">
         See what the output looks like when running seo-lint-cli.
       </p>
 
-      <div className="mt-8 space-y-6">
+      <div className="space-y-8">
         <DocBlock title="Example Output">
             <Code>
                 Checking: https://example.com
                 <br/><br/>
-                Page: https://example.com
+                <span className="text-white font-bold">Page: https://example.com</span>
                 <br/>
-                Warning: Missing &lt;h1&gt; tag
+                <span className="text-rose-400">✖ Warning:</span> Missing &lt;h1&gt; tag
                 <br/>
-                Warning: Missing canonical link
+                <span className="text-rose-400">✖ Warning:</span> Missing canonical link
                 <br/>
-                Warning: Missing Open Graph tags: og:title, og:description, og:image
+                <span className="text-rose-400">✖ Warning:</span> Missing Open Graph tags: og:title, og:description
                 <br/><br/>
-                3 SEO warnings found
+                <span className="text-rose-400 font-bold">3 SEO warnings found</span>
             </Code>
         </DocBlock>
       </div>

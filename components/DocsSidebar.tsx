@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Book, Terminal, Settings, ShieldAlert, Zap } from "lucide-react";
+import { Book, Terminal, Settings, ShieldAlert, Zap, Github, Package } from "lucide-react";
 import Link from "next/link";
 
 const navItems = [
@@ -14,38 +14,56 @@ const navItems = [
 
 export function DocsSidebar() {
   return (
-    <aside className="fixed top-20 left-0 h-[calc(100vh-5rem)] w-64 overflow-y-auto border-r border-[#D3DAD9]/10 bg-[#37353E]/50 backdrop-blur-sm hidden lg:block">
-      <div className="p-6">
-        <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-[#D3DAD9]/50">
-          Contents
-        </h3>
-        <nav className="space-y-1">
-          {navItems.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-[#D3DAD9] transition-colors hover:bg-[#44444E] hover:text-white"
-            >
-              <item.icon className="h-4 w-4 text-[#715A5A]" />
-              {item.name}
-            </Link>
-          ))}
-        </nav>
-      </div>
+    <aside className="fixed top-24 left-4 h-[calc(100vh-7rem)] w-72 hidden lg:flex flex-col rounded-2xl border border-white/5 bg-[#0F0F0F]/60 backdrop-blur-xl">
+      <div className="flex-1 overflow-y-auto p-6 scrollbar-thin scrollbar-thumb-white/10">
+        
+        {/* CONTENTS */}
+        <div>
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-white/40">
+            Documentation
+            </h3>
+            <nav className="space-y-1">
+            {navItems.map((item) => (
+                <Link
+                key={item.name}
+                href={item.href}
+                className="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-white/70 transition-all hover:bg-white/5 hover:text-white"
+                >
+                <item.icon className="h-4 w-4 text-white/40 transition-colors group-hover:text-indigo-400" />
+                {item.name}
+                </Link>
+            ))}
+            </nav>
+        </div>
       
-       <div className="mt-8 p-6 pt-0">
-        <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-[#D3DAD9]/50">
-            Resources
-        </h3>
-        <nav className="space-y-1">
-            <a href="https://github.com/vkhare-dot/seo-lint-cli" target="_blank" className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-[#D3DAD9]/70 transition-colors hover:bg-[#44444E] hover:text-white">
-                GitHub Repo
-            </a>
-            <a href="https://www.npmjs.com/package/seo-lint-cli" target="_blank" className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-[#D3DAD9]/70 transition-colors hover:bg-[#44444E] hover:text-white">
-                NPM Package
-            </a>
-        </nav>
-       </div>
+        <div className="my-8 h-px w-full bg-white/5"></div>
+
+        {/* RESOURCES */}
+        <div>
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-white/40">
+                Resources
+            </h3>
+            <nav className="space-y-1">
+                <a 
+                    href="https://github.com/vkhare-dot/seo-lint-cli" 
+                    target="_blank" 
+                    className="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-white/70 transition-all hover:bg-white/5 hover:text-white"
+                >
+                    <Github className="h-4 w-4 text-white/40 transition-colors group-hover:text-white" />
+                    GitHub Repo
+                </a>
+                <a 
+                    href="https://www.npmjs.com/package/seo-lint-cli" 
+                    target="_blank" 
+                    className="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-white/70 transition-all hover:bg-white/5 hover:text-white"
+                >
+                    <Package className="h-4 w-4 text-white/40 transition-colors group-hover:text-red-400" />
+                    NPM Package
+                </a>
+            </nav>
+        </div>
+
+      </div>
     </aside>
   );
 }

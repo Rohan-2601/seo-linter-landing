@@ -3,9 +3,9 @@ import { Github, Twitter } from "lucide-react";
 
 export function DocsFooter() {
   return (
-    <footer className="mt-20 border-t border-[#D3DAD9]/10 pt-10 pb-10">
+    <footer className="mt-24 border-t border-white/5 pt-12 pb-12">
       <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-        <div className="text-[#D3DAD9]/60 text-sm">
+        <div className="text-white/40 text-sm font-medium">
           © {new Date().getFullYear()} seo-lint-cli. Open Source.
         </div>
         
@@ -13,13 +13,13 @@ export function DocsFooter() {
           <Link 
             href="https://github.com/Rohan-2601/seo-lint-cli" 
             target="_blank"
-            className="text-[#D3DAD9]/60 hover:text-[#D3DAD9] transition-colors"
+            className="text-white/40 hover:text-white transition-colors p-2 hover:bg-white/5 rounded-lg"
           >
             <Github className="h-5 w-5" />
           </Link>
           <Link 
             href="#" 
-            className="text-[#D3DAD9]/60 hover:text-[#D3DAD9] transition-colors"
+            className="text-white/40 hover:text-[#1DA1F2] transition-colors p-2 hover:bg-white/5 rounded-lg"
           >
             <Twitter className="h-5 w-5" />
           </Link>
