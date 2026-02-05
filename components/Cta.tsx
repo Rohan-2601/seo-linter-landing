@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 export function Cta() {
   const [copied, setCopied] = useState(false);
-  const command = "npm install -g seo-lint-cli";
+  const command = "npx seo-lint-cli --help";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(command);
