@@ -32,18 +32,6 @@ export default function Page() {
             <h4 className="font-semibold text-white mt-4 mb-2">Missing Open Graph tags</h4>
             <Line>Missing one or more of: og:title, og:description, og:image</Line>
         </DocBlock>
-
-        <DocBlock title="Upcoming Rules">
-            <Line>These are planned for future versions:</Line>
-            <ul className="list-disc list-inside text-white/60 text-sm mt-3 space-y-2 ml-2">
-                <li>Title too long or too short</li>
-                <li>Description too long or too short</li>
-                <li>Missing robots.txt</li>
-                <li>Missing sitemap.xml</li>
-                <li>Missing alt tags on images</li>
-                <li>Broken internal links</li>
-            </ul>
-        </DocBlock>
       </div>
     </div>
   );

@@ -61,8 +61,7 @@ export function Cta() {
         {/* Buttons */}
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="https://www.npmjs.com/package/seo-lint-cli"
-            target="_blank"
+            href="/docs"
             className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-black shadow-xl shadow-white/5 transition-all hover:scale-105 hover:shadow-white/10"
           >
             Get Started

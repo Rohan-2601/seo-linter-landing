@@ -5,6 +5,16 @@ import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect
 
 const features = [
   {
+    title: "SEO Scoring (0-100)",
+    desc: "Every page gets a score based on passed checks. Aim for 100/100 to ensure perfect SEO health.",
+    icon: (
+      <svg width="40" height="40" viewBox="0 0 46 46" fill="none" className="text-white">
+        <path d="M23 1L29.7961 14.7709L45 16.9806L34 27.7042L36.5962 42.847L23 35.7L9.40384 42.847L12 27.7042L1 16.9806L16.2039 14.7709L23 1Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M23 45V9" stroke="currentColor" strokeWidth="2" strokeOpacity="0.2" />
+      </svg>
+    ),
+  },
+  {
     title: "Scan Local Builds",
     desc: "Lint your dist/build folder for missing titles, descriptions, canonicals, H1 errors, and OG metadata.",
     icon: (
@@ -29,50 +39,39 @@ const features = [
     ),
   },
   {
-    title: "Open Graph Checker",
-    desc: "Detect missing OG tags for social previews: og:title, og:description, og:image.",
+    title: "Quality Checks",
+    desc: "Validates that titles (10-60 chars) and meta descriptions (50-160 chars) are the optimal length.",
     icon: (
       <svg width="36" height="36" viewBox="0 0 42 42" fill="none" className="text-white">
-        <path d="M41 1H1V41H41V1Z" stroke="currentColor" strokeWidth="2"/>
-        <path d="M18 7H7V20H18V7Z" stroke="currentColor" strokeWidth="2"/>
-        <path d="M18 26H7V35H18V26Z" stroke="currentColor" strokeWidth="2"/>
-        <path d="M35 7H24V35H35V7Z" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="2"/>
+        <path d="M41 21C41 32.0457 32.0457 41 21 41C9.9543 41 1 32.0457 1 21C1 9.9543 9.9543 1 21 1C32.0457 1 41 9.9543 41 21Z" stroke="currentColor" strokeWidth="2"/>
+        <path d="M21 9V21L29 29" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        <path d="M11 21H31" stroke="currentColor" strokeWidth="2" strokeOpacity="0.2" strokeDasharray="4 4" />
       </svg>
     ),
   },
   {
-    title: "HTML Structure Validation",
-    desc: "Find missing <title>, missing meta description, missing <h1>, or multiple H1 tags.",
-    icon: (
-      <svg width="36" height="36" viewBox="0 0 42 42" fill="none" className="text-white">
-        <path
-          d="M9 9H33M9 17H33M1 25H13V31H29V25H41"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path d="M37 1H5C2.79 1 1 2.79 1 5V37C1 39.21 2.79 41 5 41H37C39.21 41 41 39.21 41 37V5C41 2.79 39.21 1 37 1Z" stroke="currentColor" strokeWidth="2"/>
-      </svg>
-    ),
-  },
-  {
-    title: "Non-Blocking Warnings",
-    desc: "You see clear warnings, but builds never fail. Perfect for CI/CD pipelines.",
+    title: "Image Accessibility",
+    desc: "Automatically detects images missing `alt` text to ensure your site is accessible and SEO friendly.",
     icon: (
       <svg width="40" height="36" viewBox="0 0 46 42" fill="none" className="text-white">
-        <path d="M30.56 18.46C27.9 15.8 23 15.8 20.34 18.46 17.68 21.12 17.68 26.02 20.34 28.68L23 31.34L25.66 28.68C28.32 26.02 28.32 21.12 25.66 18.46Z" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="2"/>
-        <path d="M41 41H5C3.94 41 2.92 40.58 2.17 39.83 1.42 39.08 1 38.06 1 37V1H17L22 9H45V37C45 38.06 44.58 39.08 43.83 39.83 43.08 40.58 42.06 41 41 41Z" stroke="currentColor" strokeWidth="2"/>
+        <path d="M1 1H45V41H1V1Z" stroke="currentColor" strokeWidth="2" />
+        <path d="M1 31L11 21L21 31" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M25 27L33 19L45 31" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="33" cy="11" r="4" stroke="currentColor" strokeWidth="2" />
       </svg>
     ),
   },
   {
-    title: "Framework Agnostic",
-    desc: "Works with Next.js, React, Astro, SvelteKit, Nuxt, Vanilla HTML — everything.",
+    title: "Unified Report",
+    desc: "See a beautiful summary of all passed rules, captured metadata, and issues in one single view.",
     icon: (
       <svg width="38" height="38" viewBox="0 0 44 44" fill="none" className="text-white">
-        <path d="M25 7C34.94 7 43 15.06 43 25 43 34.94 34.94 43 25 43 15.06 43 7 34.94 7 25" stroke="currentColor" strokeWidth="2"/>
-        <path d="M19 1C9.06 1 1 9.06 1 19H19V1Z" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="2"/>
+        <path d="M9 1H35C37.2091 1 39 2.79086 39 5V39C39 41.2091 37.2091 43 35 43H9C6.79086 43 5 41.2091 5 39V5C5 2.79086 6.79086 1 9 1Z" stroke="currentColor" strokeWidth="2"/>
+        <path d="M13 11H31" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+        <path d="M13 19H31" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+        <path d="M13 27H25" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+        <circle cx="31" cy="33" r="6" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="2"/>
+        <path d="M29 33L31 35L35 31" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
   },

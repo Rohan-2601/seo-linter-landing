@@ -11,14 +11,14 @@ export function DocsFooter() {
         
         <div className="flex items-center gap-6">
           <Link 
-            href="https://github.com/Rohan-2601/seo-lint-cli" 
+            href="https://github.com/Rohan-2601/SEO-LINTER" 
             target="_blank"
             className="text-white/40 hover:text-white transition-colors p-2 hover:bg-white/5 rounded-lg"
           >
             <Github className="h-5 w-5" />
           </Link>
           <Link 
-            href="#" 
+            href="https://x.com/rjha72" 
             className="text-white/40 hover:text-[#1DA1F2] transition-colors p-2 hover:bg-white/5 rounded-lg"
           >
             <Twitter className="h-5 w-5" />

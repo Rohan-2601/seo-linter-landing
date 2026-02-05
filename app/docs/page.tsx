@@ -8,11 +8,11 @@ export default function Page() {
       <h1 className="text-4xl font-bold text-white tracking-tight mb-6">Introduction</h1>
 
       <p className="text-lg text-white/70 leading-relaxed mb-4">
-        <strong className="text-white">seo-lint-cli</strong> is a lightweight, framework-agnostic SEO linter for static HTML builds and live URLs.
+        <strong className="text-white">seo-lint-cli</strong> is a developer-friendly SEO linting tool for keeping your static sites and live URLs search-engine optimized.
       </p>
       
       <p className="text-lg text-white/70 leading-relaxed mb-8">
-        It helps developers catch missing titles, meta descriptions, canonical tags, H1 issues, and Open Graph problems before deployment.
+        It audits your site for missing meta tags, broken structures, and accessibility issues, giving you an <strong className="text-emerald-400">SEO Score (0-100)</strong> before you deploy.
       </p>
 
       <div className="space-y-8">

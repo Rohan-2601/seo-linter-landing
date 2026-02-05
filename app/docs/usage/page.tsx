@@ -10,29 +10,32 @@ export default function Page() {
       </p>
 
       <div className="space-y-8">
-        <DocBlock title="1. Lint a local build folder">
-          <Line>Recursively scans all .html files in the folder.</Line>
+        <DocBlock title="Case 1: Check a local build folder (most common)">
+          <Line>If you’re using React / Vite / Next.js (static export):</Line>
+          <Line><strong className="text-white">Step 1: Build your project</strong></Line>
+          <Code>npm run build</Code>
+          <Line>This usually creates a folder like <code>dist/</code>, <code>build/</code>, or <code>out/</code>.</Line>
+          <Line><strong className="text-white">Step 2: Run SEO-LINTER on the build output</strong></Line>
           <Code>npx seo-lint-cli ./dist</Code>
-          <Line>or target a specific build folder:</Line>
-          <Code>seo-lint-cli ./build</Code>
         </DocBlock>
 
-        <DocBlock title="2. Lint a single live URL">
-          <Line>Scan any public URL for SEO issues:</Line>
+        <DocBlock title="Case 2: Check a single live URL">
+          <Line>If your site is already deployed or running on localhost and you want to test a single page:</Line>
           <Code>npx seo-lint-cli --url https://example.com</Code>
+          <Code>npx seo-lint-cli --url http://localhost:3000</Code>
         </DocBlock>
 
-        <DocBlock title="3. Lint multiple URLs">
-          <Line>Create a file <code>urls.txt</code> with one URL per line:</Line>
+        <DocBlock title="Case 3: Check multiple URLs at once (bulk scan)">
+          <Line><strong className="text-white">Step 1: Create a file checks.txt</strong> (one URL per line)</Line>
           <Code>
             https://example.com/
             <br/>
             https://example.com/about
             <br/>
-            https://example.com/blog/post-1
+            https://example.com/blog
           </Code>
-          <Line>Then Run:</Line>
-          <Code>npx seo-lint-cli --urls urls.txt</Code>
+          <Line><strong className="text-white">Step 2: Run the bulk scan command</strong></Line>
+          <Code>npx seo-lint-cli --urls checks.txt</Code>
         </DocBlock>
       </div>
     </div>
