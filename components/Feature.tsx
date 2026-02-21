@@ -1,7 +1,8 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import { cn } from "@/lib/utils";
 import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const features = [
   {
@@ -21,7 +22,7 @@ const features = [
       <svg width="40" height="40" viewBox="0 0 46 46" fill="none" className="text-white">
         <path d="M45 29V23C45 10.85 35.15 1 23 1 10.85 1 1 10.85 1 23V29" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M13 29H1V41C1 43.209 2.791 45 5 45H13V29Z" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="2" />
-        <path d="M45 29H33V45H41C43.209 45 45 43.209 45 41V29Z" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="2" />
+        <path d="M45 29H33V45H41C43.209 45 45 41V29Z" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="2" />
       </svg>
     ),
   },
@@ -77,44 +78,83 @@ const features = [
   },
 ];
 
-const FeatureSection = () => {
+const FeatureCard = ({ f, i }: { f: typeof features[0]; i: number }) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    offset: ["0 1", "1.2 1"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [50, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [0.3, 1]);
+
   return (
-    <section className="relative py-24 bg-[#0A0A0A] overflow-hidden">
-      {/* BACKGROUND EFFECTS (Matched to Hero) */}
-      <div className="absolute inset-0 z-0 opacity-50">
-        <BackgroundRippleEffect />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A] via-transparent to-[#0A0A0A]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-500/5 via-[#0A0A0A]/0 to-[#0A0A0A]/0" />
+    <motion.div
+      ref={cardRef}
+      style={{ y, opacity }}
+      className="group relative flex flex-col items-start p-8 rounded-3xl border border-white/5 bg-[#050505] hover:bg-[#0A0A0A] transition-colors duration-500 hover:border-white/10"
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-white/0 via-transparent to-white/0 opacity-0 group-hover:from-white/5 group-hover:to-transparent group-hover:opacity-100 transition-all duration-700 rounded-3xl pointer-events-none" />
+      
+      <div className="mb-6 relative inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0A0A0A] border border-white/10 group-hover:border-white/20 transition-all duration-500 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <motion.div
+          whileHover={{ rotate: [0, -5, 5, 0], scale: 1.05 }}
+          transition={{ duration: 0.4 }}
+          className="relative z-10 text-white/80 group-hover:text-white"
+        >
+          {f.icon}
+        </motion.div>
       </div>
+      <h3 className="text-xl font-medium text-white/90 group-hover:text-white transition-colors duration-300">
+        {f.title}
+      </h3>
+      <p className="mt-4 text-sm leading-relaxed text-white/50 group-hover:text-white/70 transition-colors duration-300 font-light">
+        {f.desc}
+      </p>
+    </motion.div>
+  );
+};
+
+const FeatureSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+
+  return (
+    <section ref={sectionRef} className="relative py-32 bg-black overflow-hidden">
+      {/* BACKGROUND EFFECTS */}
+      <motion.div style={{ y: backgroundY }} className="absolute inset-0 z-0 opacity-20 mix-blend-screen pointer-events-none">
+        <BackgroundRippleEffect />
+      </motion.div>
+      
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_white_0%,_transparent_5%)] opacity-[0.03] pointer-events-none z-0" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-            Everything You Need for <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-teal-200 to-emerald-300">SEO Hygiene</span>
+        <motion.div 
+          initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-center max-w-2xl mx-auto"
+        >
+          <h2 className="text-4xl font-medium tracking-tight text-white sm:text-5xl md:text-6xl">
+            Everything You Need for <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/40">SEO Hygiene.</span>
           </h2>
-          <p className="mt-6 text-lg leading-8 text-white/60">
+          <p className="mt-6 text-lg leading-relaxed text-white/50 font-light">
             seo-lint-cli helps developers catch SEO mistakes early without breaking the build.
             Designed for speed, simplicity, and accuracy.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-20 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f, i) => (
-            <div
-              key={f.title}
-              className="group relative flex flex-col items-start p-8 rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 transition-all duration-300 hover:border-white/10 hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-500/10"
-              style={{ animationDelay: `${i * 100}ms` }}
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 border border-white/10 group-hover:scale-110 transition-transform duration-300">
-                {f.icon}
-              </div>
-              <h3 className="text-xl font-semibold text-white group-hover:text-indigo-300 transition-colors">
-                {f.title}
-              </h3>
-              <p className="mt-4 text-sm leading-relaxed text-white/60 group-hover:text-white/80 transition-colors">
-                {f.desc}
-              </p>
-            </div>
+            <FeatureCard key={f.title} f={f} i={i} />
           ))}
         </div>
       </div>
