@@ -1,4 +1,20 @@
-import type { Metadata } from "next"; import { Manrope, Inter } from "next/font/google"; import { ClientLayout } from "@/components/ClientLayout"; import "./globals.css"; const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin"], weight: ["400", "500", "600", "700"], }); const inter = Inter({ variable: "--font-inter", subsets: ["latin"], weight: ["400", "500", "600", "700"], });
+import type { Metadata } from "next";
+import { Manrope, Inter } from "next/font/google";
+import { ClientLayout } from "@/components/ClientLayout";
+import { SmoothScroll } from "@/components/providers/SmoothScroll";
+import { Noise } from "@/components/ui/noise";
+import "./globals.css";
+
+const manrope = Manrope({
+  variable: "--font-manrope",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   title: "seo-lint-cli – SEO Linter for Developers",
@@ -52,11 +68,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark scroll-smooth">
       <body
-        className={`${manrope.variable} ${inter.variable} antialiased bg-[#37353E] text-[#D3DAD9]`}
+        className={`${manrope.variable} ${inter.variable} antialiased bg-black text-white selection:bg-white/30 selection:text-black overflow-x-hidden`}
       >
-        <ClientLayout>{children}</ClientLayout>
+        <Noise />
+        <SmoothScroll>
+          <ClientLayout>{children}</ClientLayout>
+        </SmoothScroll>
       </body>
     </html>
   );
