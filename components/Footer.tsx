@@ -21,8 +21,7 @@ export function LandingFooter() {
           {/* Branding */}
           <div className="max-w-sm">
             <h2 className="text-xl font-bold tracking-tight text-white flex items-center gap-2">
-              <span className="h-6 w-6 rounded bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-[10px] text-white"></span>
-              seo-lint-cli
+              SEO Linter
             </h2>
             <p className="mt-4 text-sm text-white/40 leading-relaxed transition-colors hover:text-white/60">
               A lightweight SEO linter that helps developers catch missing title tags,
