@@ -6,7 +6,7 @@ export default function Page() {
       <h1 className="text-4xl font-bold text-white tracking-tight mb-6">Installation</h1>
 
       <p className="text-lg text-white/70 leading-relaxed mb-8">
-        You can use seo-lint-cli directly via npx or install it locally/globally.
+        You can use SEO LINTER directly via npx or install it locally/globally.
       </p>
 
       <div className="space-y-8">

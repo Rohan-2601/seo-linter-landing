@@ -6,7 +6,7 @@ export function DocsFooter() {
     <footer className="mt-24 border-t border-white/5 pt-12 pb-12">
       <div className="flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="text-white/40 text-sm font-medium">
-          © {new Date().getFullYear()} seo-lint-cli. Open Source.
+          © {new Date().getFullYear()} SEO LINTER. Open Source.
         </div>
         
         <div className="flex items-center gap-6">

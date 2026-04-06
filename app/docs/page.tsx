@@ -8,7 +8,7 @@ export default function Page() {
       <h1 className="text-4xl font-bold text-white tracking-tight mb-6">Introduction</h1>
 
       <p className="text-lg text-white/70 leading-relaxed mb-4">
-        <strong className="text-white">seo-lint-cli</strong> is a developer-friendly SEO linting tool for keeping your static sites and live URLs search-engine optimized.
+        <strong className="text-white">SEO LINTER</strong> is a developer-friendly SEO linting tool for keeping your static sites and live URLs search-engine optimized.
       </p>
       
       <p className="text-lg text-white/70 leading-relaxed mb-8">

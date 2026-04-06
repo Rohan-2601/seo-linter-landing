@@ -17,7 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "seo-lint-cli – SEO Linter for Developers",
+  title: "SEO LINTER – SEO Linter for Developers",
   description:
     "A lightweight, framework-agnostic SEO linter for static HTML builds and live URLs. Catch missing titles, meta descriptions, canonical tags, H1 issues, and Open Graph problems before deployment.",
   keywords: [
@@ -36,24 +36,24 @@ export const metadata: Metadata = {
     canonical: "https://seo-linter.vercel.app/",
   },
   openGraph: {
-    title: "seo-lint-cli – SEO Linter for Developers",
+    title: "SEO LINTER – SEO Linter for Developers",
     description:
       "Catch missing titles, meta descriptions, canonical tags, H1 issues, and Open Graph problems before deployment. Works with any framework.",
     url: "https://seo-linter.vercel.app/",
-    siteName: "seo-lint-cli",
+    siteName: "",
     type: "website",
     images: [
       {
         url: "https://seo-linter.vercel.app/og-image.png",
         width: 1200,
         height: 630,
-        alt: "seo-lint-cli Open Graph Image",
+        alt: "SEO LINTER Open Graph Image",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "seo-lint-cli – SEO Linter for Developers",
+    title: "SEO LINTER – SEO Linter for Developers",
     description:
       "A simple SEO linter that helps developers catch basic SEO issues before going live.",
     images: ["https://seo-linter.vercel.app/og-image.png"],
