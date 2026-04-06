@@ -6,7 +6,7 @@ export default function Page() {
       <h1 className="text-4xl font-bold text-white tracking-tight mb-6">Rules</h1>
 
       <p className="text-lg text-white/70 leading-relaxed mb-8">
-        Review the SEO rules that seo-lint-cli checks for.
+        Review the SEO rules that SEO LINTER checks for.
       </p>
 
       <div className="space-y-8">

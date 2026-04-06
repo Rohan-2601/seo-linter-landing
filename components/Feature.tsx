@@ -147,7 +147,7 @@ const FeatureSection = () => {
             Everything You Need for <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/40">SEO Hygiene.</span>
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-white/50 font-light">
-            seo-lint-cli helps developers catch SEO mistakes early without breaking the build.
+            SEO LINTER helps developers catch SEO mistakes early without breaking the build.
             Designed for speed, simplicity, and accuracy.
           </p>
         </motion.div>
